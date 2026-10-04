@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy for Cat Utopia Rush.">
+<title>Privacy Policy · Cat Utopia Rush</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<main class="shell document">
+<header>
+<p class="eyebrow">Cat Utopia Rush</p>
+<h1>Privacy Policy</h1>
+<p class="lead">This policy explains how information is handled when you use Cat Utopia Rush.</p>
+<dl class="meta">
+<div><dt>Effective date</dt><dd>October 4, 2026</dd></div>
+<div><dt>Controller</dt><dd>Silicnova Chip LLC</dd></div>
+<div><dt>Privacy contact</dt><dd><a href="mailto:zsl262014@163.com">zsl262014@163.com</a></dd></div>
+</dl>
+</header>
+<section>
+<h2>1. Information we may process</h2>
+
+<ul>
+<li><strong>Login and account data handled by our service.</strong> The game uses a short-lived TikTok login code to request a game session. Our backend exchanges the code with TikTok and processes the returned platform account identifier and login credentials for authentication. It stores an internal game account identifier, an application-specific cryptographic hash derived from the platform account identifier, and account creation and update timestamps. It also stores hashes of login codes and game session credentials, login status or an error category, and expiry timestamps to manage sessions and prevent repeated code exchange. Raw TikTok account identifiers, login codes, platform access or refresh credentials, and raw game session credentials are not stored in our D1 database. Platform access and refresh credentials are discarded after the server-side exchange, and the game's Client Secret stays server-side. The client keeps its game session credential in memory while the game is running.</li>
+</ul>
+
+<ul>
+<li><strong>Mission hint records saved by our service.</strong> We store whether each game account has claimed its Home Screen Shortcut and Profile Revisit hint, whether that entitlement has been used, and a use-operation identifier to prevent duplicate consumption. An available mission hint balance is derived from these records; it is not a cash balance.</li>
+</ul>
+
+<ul>
+<li><strong>Network and security data handled by our service.</strong> Requests to our backend pass through Cloudflare. Our backend processes the connecting IP address for rate limiting and stores its hash with a request-count window and hit count. The rate-limit table does not store the raw IP address. Cloudflare may separately process network metadata in providing its services.</li>
+</ul>
+
+<ul>
+<li><strong>Information processed on the client.</strong> The current board, selected cards, tray, score, combos, elapsed play time, move history, and hint feedback are processed within the running game. The game also checks network availability and limited TikTok runtime information, such as the device platform, client and SDK versions, and launch scene. The implemented login and mission-reward requests do not send puzzle progress, scores, or move history to our backend, and our D1 service does not save puzzle progress.</li>
+</ul>
+
+<ul>
+<li><strong>Advertising diagnostics on the client.</strong> The game processes ad availability, viewing completion, and error callbacks to deliver a hint correctly and handle failures. It keeps session diagnostics and writes them to the runtime console for troubleshooting. These can include timestamps, build and runtime versions, ad type, a masked placement identifier, completion or failure status, error codes and messages, and platform-provided request, log, or trace identifiers when present. The current game code does not upload these diagnostics to our backend or save advertising reward history in D1. TikTok may separately process advertising and runtime information under its own policies.</li>
+</ul>
+
+<p>Our current login and mission-reward service does not request or save profile details such as your TikTok nickname, avatar, country, region, or language. It does not store rankings, skins, or draw histories. The current game has no in-game language selector and does not use clipboard APIs.</p>
+
+<h2>2. Why we process information</h2>
+
+<p>We use information to operate the puzzle on the client, authenticate game sessions, save and retrieve mission hint entitlements, prevent duplicate claims and use, rate-limit requests, provide optional rewarded hints and interstitial advertising, maintain security, troubleshoot failures, comply with law, and respond to requests. The current service does not save puzzle progress or calculate competition results.</p>
+
+<p>Depending on your location and the purpose, processing is based on operating the requested game service, our legitimate interests in security and service improvement, consent where required for advertising or optional features, and compliance with legal obligations. Where consent is required, it is requested through the applicable platform flow.</p>
+
+<h2>3. Advertising and missions</h2>
+
+<p>Players may voluntarily watch a rewarded video for one hint. A hint highlights an available cat card only after the advertising platform confirms complete viewing and while a valid hint remains available for the active round. Closing early, failure, timeout, or no fill does not grant a hint; repeated callbacks do not grant additional hints. Interstitial ads may appear at the natural break when choosing Play Again after a win. TikTok may process advertising and mission activity under its own privacy terms.</p>
+
+<p>The game supports Profile Revisit and Home Screen Shortcut missions. Each eligible mission source can provide one free hint per game account. Our backend stores claim and use records so that the same entitlement is not granted or consumed more than once. These records can remain associated with the game account across game sessions; current puzzle progress is handled separately on the client.</p>
+
+<h2>4. Service providers and disclosure</h2>
+
+<ul>
+<li><strong>TikTok</strong> provides Mini Games hosting and runtime, login, Shortcut and Revisit missions, Preview, and advertising capabilities. TikTok's handling of its own account, platform, and advertising data is governed by its applicable policies.</li>
+<li><strong>Cloudflare</strong> provides Worker API processing, D1 database storage, networking, and security infrastructure for the game's backend. Requests pass through Cloudflare, which may handle network and service metadata under its applicable service arrangements and policies. The current game backend uses Worker and D1; it does not use R2 asset storage.</li>
+</ul>
+
+<p>We do not sell personal information. We may disclose information when required by law, to protect users or the service, or to a service provider acting for the purposes described here.</p>
+
+<h2>5. Retention and security</h2>
+
+<p>Information is retained only as long as reasonably needed to provide an active game account, maintain security, prevent duplicate rewards and fraud, meet legal obligations, and resolve disputes. When information is no longer needed, it is deleted or anonymized where reasonably possible. You may contact us to request deletion, subject to identity verification and any lawful retention requirement.</p>
+
+<p>Game session and login-code records have expiry timestamps; the backend removes expired entries when processing later login requests. Old rate-limit windows are cleared during subsequent requests. Account and mission claim and use records do not have an automatic expiry in the current implementation. Their retention and any deletion request are handled by the operator for the purposes described above. Restarting a puzzle resets its round state but does not delete the backend's account or mission records. TikTok and Cloudflare handle records they retain separately under their applicable policies and arrangements.</p>
+
+<p>We use access controls, server-only secrets, HTTPS, input validation, idempotency checks, and restricted production origins, but no system is completely secure.</p>
+
+<h2>6. International processing</h2>
+
+<p>TikTok, Cloudflare, and Silicnova Chip LLC may process information in countries other than your country. Where required, transfers are handled using appropriate contractual, organizational, or legal safeguards provided by the relevant service provider or operator.</p>
+
+<h2>7. Children</h2>
+
+<p>The game is not intended for children who cannot lawfully use TikTok or consent to the relevant processing. We follow TikTok age controls and applicable child-privacy law. A parent or guardian may contact us regarding a child's information where applicable.</p>
+
+<h2>8. Your rights and choices</h2>
+
+<p>Depending on your location, you may have rights to access, correct, delete, restrict, object, withdraw consent, or receive a copy of your information, and to complain to a regulator. Send requests to <a href="mailto:zsl262014@163.com">zsl262014@163.com</a>. We may verify your identity and will respond as required by applicable law.</p>
+
+<p>You may decline rewarded ads; ad failure or no fill does not block restarting the puzzle or continuing to play. TikTok account and advertising controls may also be available in TikTok.</p>
+
+<h2>9. Changes</h2>
+
+<p>Material changes will be disclosed as required. The effective date will be updated when a revised policy takes effect.</p>
+
+<h2>10. Contact</h2>
+
+<p>Operator: Silicnova Chip LLC</p>
+
+<p>Email: <a href="mailto:zsl262014@163.com">zsl262014@163.com</a></p>
+</section>
+<footer><a href="../">Legal home</a><a href="../terms/">Terms of Service</a><a href="mailto:zsl262014@163.com">Contact</a></footer>
+</main>
+</body>
+</html>
